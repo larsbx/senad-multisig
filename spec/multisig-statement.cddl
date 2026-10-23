@@ -1,0 +1,40 @@
+; Senad+ multisig statement — logical CDDL sketch
+; Exact integer labels and byte-level canonicalization profile remain to be frozen
+; by golden vectors.
+
+digest = {
+  algorithm_id: uint,
+  digest_bytes: bstr
+}
+
+multisig-statement = {
+  version: uint,
+  domain: tstr,
+  purpose: tstr,
+  action: tstr,
+  stream_id: tstr / bstr,
+  object_type: tstr,
+  object_root: digest,
+  policy_id: tstr / bstr,
+  policy_version: uint,
+  signer_roster_root: digest,
+  crypto_suite_epoch: uint,
+  governance_epoch: uint,
+  authorization_epoch: uint,
+  registry_checkpoint: digest,
+  sequence: uint,
+  previous_statement_id: digest / null,
+  ? transition_data: any,
+  context: any
+}
+
+signature-entry = {
+  signer_id: tstr / bstr,
+  key_id: tstr / bstr,
+  ? role_id: tstr / bstr,
+  signature_suite_id: uint,
+  signature_bytes: bstr,
+  registration_ref: digest,
+  eligibility_proof_ref: digest,
+  ? auxiliary_evidence: any
+}
