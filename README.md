@@ -37,3 +37,9 @@ Out of initial scope:
 - transport protocols
 
 See [docs/SPEC.md](docs/SPEC.md) and [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md).
+
+
+## Cryptographic lifecycle
+
+The [crypto-agility component](crypto-agility/README.md) covers KEM/envelope migration, signature and hash succession, rewrapping, conditional erasure, and long-term evidence. It reuses this repository's authorization statement and policy semantics; its specification status and production acceptance gates are explicit.
+
